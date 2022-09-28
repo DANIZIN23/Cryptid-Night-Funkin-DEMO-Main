@@ -157,7 +157,7 @@ class WeekData {
 			}
 		}
 
-		#if MODS_ALLOWED
+		#if windows 
 		for (i in 0...directories.length) {
 			var directory:String = directories[i] + 'weeks/';
 			if(FileSystem.exists(directory)) {
@@ -194,7 +194,7 @@ class WeekData {
 				var weekFile:WeekData = new WeekData(week, weekToCheck);
 				if(i >= originalLength)
 				{
-					#if MODS_ALLOWED
+					#if windows 
 					weekFile.folder = directory.substring(Paths.mods().length, directory.length-1);
 					#end
 				}
@@ -209,7 +209,7 @@ class WeekData {
 
 	private static function getWeekFile(path:String):WeekFile {
 		var rawJson:String = null;
-		#if MODS_ALLOWED
+		#if windows 
 		if(FileSystem.exists(path)) {
 			rawJson = File.getContent(path);
 		}
